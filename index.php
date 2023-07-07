@@ -1,3 +1,17 @@
+<?php
+    include 'koneksi.php';
+
+    if(isset($_POST['submit'])) {
+
+        $getMaxId = mysqli_query($conn, "SELECT MAX(RIGHT(tb_inventori, 5)) AS id FORM 
+        id_inventori");
+
+        $d = mysqli_fetch_object($getMaxId);
+        $generateId = 'Y' .date('T').sprintf("%05s", $d->id + 1);
+        echo $generateId;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +26,7 @@
     <!-- box Form -->
     <section class="box-form">
 
-        <h2>
+        <h2 class="heading">
             Form Pendataan Aplikasi
         </h2>
 
@@ -31,7 +45,7 @@
                     <td> Deskripsi </td>
                     <td>:</td>
                     <td>
-                    <textarea id="deskripsi_aplikasi" name="deskripsi_aplikasi" rows="4" cols="50"></textarea>
+                    <textarea id="deskripsi_aplikasi" name="deskripsi_aplikasi" rows="4" cols="50" class="input-deks"></textarea>
                     </td>
                 </tr>
                 <tr>
