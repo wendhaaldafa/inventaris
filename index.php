@@ -3,12 +3,13 @@
 
     if(isset($_POST['submit'])) {
 
-        $getMaxId = mysqli_query($conn, "SELECT MAX(RIGHT(tb_inventori, 5)) AS id FORM 
-        id_inventori");
+        $getMaxId = mysqli_query($conn, "SELECT MAX(RIGHT(id_aplikasi, 2)) AS id FORM 
+        tb_inventori");
 
         $d = mysqli_fetch_object($getMaxId);
-        $generateId = 'Y' .date('T').sprintf("%05s", $d->id + 1);
+        $generateId = 'P' .date('Y').sprintf("%05s", $d->id + 1);
         echo $generateId;
+
     }
 ?>
 
