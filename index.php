@@ -28,7 +28,7 @@
     <section class="box-form">
 
         <h2 class="heading">
-            Form Pendataan Aplikasi
+            Form Pendataan Aplikasi balap
         </h2>
 
         <form action="" method="post">
