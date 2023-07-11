@@ -3,12 +3,22 @@
 
     if(isset($_POST['submit'])) {
 
-        $getMaxId = mysqli_query($conn, "SELECT MAX(RIGHT(id_aplikasi, 2)) AS id FORM 
-        tb_inventori");
+        $insert = mysqli_query($conn, "insert into tb_inventori set
 
-        $d = mysqli_fetch_object($getMaxId);
-        $generateId = 'P' .date('Y').sprintf("%05s", $d->id + 1);
-        echo $generateId;
+        nama_aplikasi = '$_POST[nama_aplikasi]',
+        deskripsi_aplikasi = '$_POST[deskripsi_aplikasi]',
+        tgl_pembuatan = '$_POST[tgl_pembuatan]',
+        SKPD_pengampu = '$_POST[SKPD_pengampu]',
+        server = '$_POST[server]'
+        ");
+
+        if($insert) {
+            echo '<script>window.location="list.php"</script>';
+        }else {
+            echo 'huft'.mysqli_error($conn);
+        }
+
+        
 
     }
 ?>
@@ -28,7 +38,7 @@
     <section class="box-form">
 
         <h2 class="heading">
-            Form Pendataan Aplikasi balap
+            Form Pendataan Aplikasi
         </h2>
 
         <form action="" method="post">
@@ -82,6 +92,8 @@
         </div>
 
         </form>
+        <br>
+        <a href="list.php">Hasil Data</a>
 
     </section>
     
