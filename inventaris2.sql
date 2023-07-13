@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jul 2023 pada 09.22
+-- Waktu pembuatan: 13 Jul 2023 pada 10.43
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.11
 
@@ -48,20 +48,21 @@ INSERT INTO `admin` (`id_admin`, `nm_admin`, `username`, `password`) VALUES
 --
 
 CREATE TABLE `tb_inventori` (
-  `id_aplikasi` varchar(255) NOT NULL,
+  `id_aplikasi` int(50) NOT NULL,
   `nama_aplikasi` varchar(255) NOT NULL,
   `deskripsi_aplikasi` text NOT NULL,
   `tgl_pembuatan` date NOT NULL,
   `SKPD_pengampu` varchar(50) NOT NULL,
-  `server` varchar(50) NOT NULL
+  `server` varchar(50) NOT NULL,
+  `ip_server` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tb_inventori`
 --
 
-INSERT INTO `tb_inventori` (`id_aplikasi`, `nama_aplikasi`, `deskripsi_aplikasi`, `tgl_pembuatan`, `SKPD_pengampu`, `server`) VALUES
-('', 'Website Desa', 'Merupakan website yg dikelola oleh desa', '2022-05-11', 'Diskominfo', 'Server Kemenkominfo');
+INSERT INTO `tb_inventori` (`id_aplikasi`, `nama_aplikasi`, `deskripsi_aplikasi`, `tgl_pembuatan`, `SKPD_pengampu`, `server`, `ip_server`) VALUES
+(7, 'Website Desa', 'hjvjkv', '2023-07-13', 'Diskominfo', 'Server Diskominfo', 0);
 
 --
 -- Indexes for dumped tables
@@ -88,6 +89,12 @@ ALTER TABLE `tb_inventori`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_inventori`
+--
+ALTER TABLE `tb_inventori`
+  MODIFY `id_aplikasi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
