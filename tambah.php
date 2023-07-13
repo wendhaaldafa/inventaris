@@ -1,27 +1,4 @@
-<?php
-    include 'koneksi.php';
 
-    if(isset($_POST['submit'])) {
-
-        $insert = mysqli_query($conn, "insert into tb_inventori set
-
-        nama_aplikasi = '$_POST[nama_aplikasi]',
-        deskripsi_aplikasi = '$_POST[deskripsi_aplikasi]',
-        tgl_pembuatan = '$_POST[tgl_pembuatan]',
-        SKPD_pengampu = '$_POST[SKPD_pengampu]',
-        server = '$_POST[server]'
-        ");
-
-        if($insert) {
-            echo '<script>window.location="list.php"</script>';
-        }else {
-            echo 'huft'.mysqli_error($conn);
-        }
-
-        
-
-    }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,9 +11,7 @@
 </head>
 <body>
     <!-- box Form -->
-    <h1 class="page-header">Dasbor</h1>
     <br>
-        <a href="list.php">Hasil Data</a>
 
     <section class="box-form">
 
@@ -44,7 +19,7 @@
             Form Pendataan Aplikasi
         </h2>
 
-        <form action="" method="post">
+        <form action="edit_proses.php" method="post">
 
         <div class="box">
             <table border="0" class="tabel-form">

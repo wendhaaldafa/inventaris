@@ -7,21 +7,25 @@
 
 .heading {
     text-align: center;
+    color: rgb(0, 0, 0);
+    border: 1px solid #ffffff;
 }
 
 body {
-    background-color: rgb(201, 226, 252);
+    background-image: url(img/kominfo-34.jpg);
+    backdrop-filter: blur(5px);
+    background-size:cover;
+    background-repeat: no-repeat;
 }
 
 .box-form {
     width: 50%;
     margin: 100px auto;
-    
 }
 
 .box {
-    background-color: aliceblue;
-    border: 1px solid #ddd;
+    background-color: rgb(238, 242, 245);
+    border: 1px solid #85d2ff;
     padding: 10px;
     box-sizing: border-box;
     margin: 20px 0 20px;
@@ -54,5 +58,12 @@ body {
 
 .btn-simpan :hover {
     cursor: pointer;
-    background-color: #4881AE;
+    background-color: #ffffff;
+}
+
+.display {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    
 }
